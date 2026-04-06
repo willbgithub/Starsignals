@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ public class BrailleCell : MonoBehaviour
     [SerializeField] GameObject cellContainer;
     bool capitalized; // whether the character is capitalized or not
     bool number; // whether the character is a number or not
-    char character;
+    int val; // binary value of cell
     Dictionary<char, int> alphabet = new Dictionary<char, int>()
     {
         {'A', 1},
@@ -68,10 +69,35 @@ public class BrailleCell : MonoBehaviour
             dot.Init(this, i);
         }
     }
+    public void Clear()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            BrailleDot dot = cellContainer.transform.GetChild(i).GetComponent<BrailleDot>();
+            dot.SetOn(false);
+        }
+    }
     public void ToggleDot(int dotIndex)
     {
-        BrailleDot dot = cellContainer.transform.GetChild(dotIndex + 1).GetComponent<BrailleDot>();
+        BrailleDot dot = cellContainer.transform.GetChild(dotIndex).GetComponent<BrailleDot>();
         dot.Toggle();
+    }
+    public void SetDotOn(int dotIndex, bool val)
+    {
+        BrailleDot dot = cellContainer.transform.GetChild(dotIndex).GetComponent<BrailleDot>();
+        dot.SetOn(val);
+    }
+    public void SetCell(int value)
+    {
+        Clear();
+        for (int index = 5; index >= 0; index--)
+        {
+            if (value >= (int)Math.Pow(2, index))
+            {
+                value -= (int)Math.Pow(2, index);
+                SetDotOn(index, true);
+            }
+        }
     }
     public void OnDotClick(BrailleDot dot)
     {
