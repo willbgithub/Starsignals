@@ -9,4 +9,8 @@ public class Game : MonoBehaviour
     {
         cell.SetCell(0);
     }
+    public void OnSliderChange(float value)
+    {
+        cell.SetCell((int)value);
+    }
 }
