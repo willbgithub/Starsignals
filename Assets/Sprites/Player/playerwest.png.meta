@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b8c99180486584043aeb18c7e48e8e8c
+guid: 19f0faf7ca21f8e498690130ba4f1dfd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1006809076941580476
-    second: plainsroom_0
+      213: -589066419180085656
+    second: playerwest_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: plainsroom_0
+      name: playerwest_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1152
-        height: 648
+        width: 73
+        height: 176
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cb8edbb6587e8fd00800000000000000
-      internalID: 1006809076941580476
+      spriteID: 86ed8a7763733d7f0800000000000000
+      internalID: -589066419180085656
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      plainsroom_0: 1006809076941580476
+      playerwest_0: -589066419180085656
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
